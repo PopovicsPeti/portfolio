@@ -1,0 +1,45 @@
+
+
+<div class="container-space">
+    <app-side-bar [background]="true"
+        [git]="'https://github.com/PopovicsPeti/space/tree/master'"
+        [host]="'https://space-travel-52a8f.firebaseapp.com/home'"
+    ></app-side-bar>
+    <section id="eng" class="row documentation" *ngIf="!isHungarianSpace">
+        <article class="text">
+            <h2>Space travel website</h2>
+            <p>
+                This project was built by the instructions of <b>Kevin Powell</b>, Build a Space Travel Website course on Scrimba. The design of the web page is completely his idea. This project is a vanilla JS and mostly CSS project on the Scrimba education site. 
+            </p>
+            <p>
+                In my case Angular framework was used to create the project. It has changed several solutions in the codeing methods. The Crew page was only mentioned but the lessons did not have complex details to build that page and the Destination page was completely Homework.  
+            </p>
+            <p>
+                This project focuses mainly to the design. It has some HTTP requests from the database because the sliders get the information from a database and Angular methods like ngFor handle the data. 
+                This site has no user features it is only a landing page of a fictive “commercial space travel agency”. 
+            </p>
+        </article>
+        <div class="large-btn-container">
+            <a routerLink="/menu" class="large-btn">MENU</a>
+        </div>
+
+        </section>
+        <section id="hun" class="row documentation" *ngIf="isHungarianSpace">
+            <article class="text">
+                <h2>Űr ügynökség</h2>
+                <p>
+                    Ezt a projektet <b>Kevin Powel</b> munkássága nyomán készítettem el, a Scrimba Frontend oktató weboldal "Build a Space Travel Website" című kurzusának segítségével. A teljes weboldal dizájnja az ő ötlete és útmutatásai alapján készült. Ez a weboldal szimpla Java Script és CSS oktatatására és gyakorlására szolgál. 
+                </p>
+                <p>
+                    Az én esetemben Angular keretrendszer használatával történt a megvalósítás, mely alapjaiba változtatta meg a projekt felépítését és a logika használataát. Az oktatóanyagban a <i>"crew"</i> oldal kódolása már csak nagy vonalakban van említve míg a <i>"destination"</i> oldal önálló feladatként van feladva. 
+                </p>
+                <p>
+                    Ez egy dizájn fókuszú weboldal, egy fiktív űrügynökség reklám oldala. A projekt nem tartalmaz regisztrációhoz és felhasználókhoz köthető tartalmakat. Azonban az adatok lekérése egyszerű HTTP kérésekkel van megoldva Firebase-ről az eredeti anyag JS-be való beleégetése helyett. A lekért adatok menedzselése az angular adta lehetőségek igénybevételével történikaz oldalon. 
+                </p>
+            </article>
+            <div class="large-btn-container">
+                <a routerLink="/menu" class="large-btn">MENÜ</a>
+            </div>
+        </section>
+</div>
+

@@ -1,0 +1,104 @@
+
+<div class="massage-icon" >
+    <a routerLink="/massage-website"
+        (mouseenter)="handleHover('.massage-bg')" 
+        (mouseleave)="handleHoverExit('.massage-bg')">
+        <img src="../../../assets/navbar/spa.png" alt="">
+    </a>
+</div>
+<div class="massage-bg">
+    <p> {{ isHungarianWeather ?  'TOVÁBB A MASSZÁZS OLDAL DOKUMENTÁCIÓJÁHOZ' : 'GO TO THE DOCUMENTATION OF THE MASSAGE PAGE' }} </p>
+</div>
+
+<div class="space-icon">    
+    <a routerLink="/space-travel"
+        (mouseenter)="handleHover('.space-bg')" 
+        (mouseleave)="handleHoverExit('.space-bg')">
+        <img src="../../../assets/navbar/planet.png" alt="">
+    </a>
+</div>
+<div class="space-bg">
+    <p>{{ isHungarianWeather ?  'TOVÁBB AZ ŰR APP DOKUMENTÁCIÓJÁHOZ' : 'GO TO THE DOCUMENTATION OF THE SPACE TRAVEL PAGE' }}</p>
+</div>
+
+<div class="cv-icon">
+    <a routerLink="/cv"
+        (mouseenter)="handleHover('.cv-bg')" 
+        (mouseleave)="handleHoverExit('.cv-bg')">
+        <img src="../../../assets/navbar/about.png" alt="">
+    </a>
+</div>
+<div class="cv-bg">
+    <p>{{ isHungarianWeather ?  'TOVÁBB AZ ÖNÉLETRAJZHOZ' : 'GO TO THE RESUME PAGE ' }}</p>
+</div>
+
+<div class="motivation-icon">
+    <a routerLink="/motivation-letter"
+        (mouseenter)="handleHover('.motivation-bg')" 
+        (mouseleave)="handleHoverExit('.motivation-bg')">
+        <img src="../../../assets/navbar/motivation.png" alt="">
+    </a>
+</div>
+<div class="motivation-bg">
+    <p>{{ isHungarianWeather ?  'TOVÁBB A MOTIVÁCIÓKHOZ' : 'GO TO THE MOTIVATION PAGE' }} </p>
+</div>
+
+<div class="weather-container">
+    <app-side-bar [background]="true"
+    [git]="'https://github.com/PopovicsPeti/Forecast'"
+    [host]="'https://weather-forecast-69fe0.web.app'"
+    ></app-side-bar>
+    <section id="eng" class="row documentation" *ngIf="!isHungarianWeather">
+        <article class="text">
+            <h2>Weather forecast</h2>
+            <p>
+                This is a simple weather forecast application which has only desktop layout jet. 
+            </p>
+            <p>
+                In this project I use two different API to get the required data. <b>Google places API</b> provides the coordinates for the <b>Open Weather API</b> to get the weather data. This application receives 40 weather log, one for every 3 hours in the next 120 hours, This feature shows the weather for the next 5 day.
+            </p>
+            <p>
+                Firstly I use Google places API to implement an autocomplete component mechanism which makes easier to find a city and in the same time all options given by the API are valid. When a place name is chosen the API gives back photos from that particular city that I use as backgrounds for the slider and I can collect the latitude and longitude of the city.
+            </p>
+            <p>
+                I use these data to make a request to the Open Weather API. Two interfaces and three costume pipes help to handle the data. 
+            </p>
+            <p>
+                This application contains three components and two services in order to achieve reusability and encapsulate the logic.
+                This project has simple error handling options in case of potential problems.  
+            </p>
+            <h3>How to use weather forecast app</h3>
+            <ul>
+                <li>It starts with an image which greats the user</li>
+                <li>Type a city name than click on an option given by the autocomplete feature.</li>
+                <li>The application shows a slider that contains the weather forecast data</li>
+            </ul>
+        </article>
+    </section>
+    <section id="hun" class="row documentation" *ngIf="isHungarianWeather">
+        <article class="text">
+            <h2>Időjárás előrejelzés</h2>
+            <p>
+                Ez egy egyszerű időjárás előre jelző applikáció, ami jelenleg még nem rendelkezik responsive elrendezéssel.
+            </p>
+            <p>
+                Két külön API segítségével működtetem a projektet melyek a <b>Google places API</b>, ami a helyadatokat biztosítja az <b>Open Weather API</b> számára az időjárás adatokhoz. Az alkalmazás 40 időjárás bejegyzést kap 3 óránként egy adat tömböt a következő 120 órára. Igy rendelkezik a következő 5 nap adataival.
+            </p>
+            <p>
+                Elsőként a Google places API megvalósít egy automatikus kiegészítés funkciót, mely megkönnyíti a városok megtalálását valamint egyúttal validálja is a helyszín létezését. Miután a legördülő menünől ki lett választva a kívánt helyiség az API visszaadja annak geolokációját továbbá képeket biztosít a dizájnhoz, amiket háttérnek használok.
+            </p>
+            <p>
+                Ezen adatokkal le tudom kérni az előre jelzést az Open Weather API-n keresztül. Két interface és három pipe segít az adatok kezelésében.
+            </p>
+            <p>
+                Az applikációt három komponens és két service alkotja. Ezek újrahasználási célokat és az üzleti logika elzárását valósítják meg. A projekt továbbá egy egyszerű hibakezelést is végez az esetleges problémák megoldása végedt.
+            </p>
+            <h3>Az applikáció használata</h3>
+            <ul>
+                <li>Az oldal egy üdvözlőképpel fogad</li>
+                <li>Itt csak egy kívánt helyiség nevet kell az input mezőbe beírni majd kiválasztani a legördülő menüből a kívánt várost</li>
+                <li>Ezután az oldal a slider segítségével jeleníti meg a következő 5 nap időjárását.</li>
+            </ul>
+        </article>
+    </section>
+</div>	

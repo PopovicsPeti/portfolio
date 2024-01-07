@@ -1,0 +1,384 @@
+.hide {
+    display: none;
+}
+    
+.cv-container {
+    overflow: hidden;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    position: relative;
+    overflow-x: hidden;
+
+    .summary {
+        padding-top: 12vh;
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-bottom: .5rem;
+            border-radius: 1rem;
+        }
+
+        .indent {
+            text-indent: .5rem;
+            text-align: justify;
+        }
+
+        .soft {
+            background-color: var(--secondary-color);
+            padding-bottom: 1.5rem;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+
+            ul {
+                padding-left: 2rem;
+            }
+        }
+
+        .contact {
+            background-color: var(--secondary-color);
+            list-style-type: none;
+            padding-top: 2rem;
+            border-radius: 1rem;
+            padding: 1rem;
+
+            li {
+                padding-bottom: .5rem;
+
+                .contact-text {
+                    margin-left: .5rem;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .section-select {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 2rem 0;
+
+        #experience-btn,
+        #education-btn {
+            border: none;
+            padding: .7rem 1.5rem;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            background-color: var(--main-color);
+            transition: .5s ease-in-out;
+            
+            &:hover {
+                background-color: rgba(var(--main-color-rgb), .8);
+            }
+        }
+        
+        .active {
+            background-color: var(--secondary-color)!important;
+
+            &:hover {
+                background-color: var(--secondary-color);
+            }
+        }
+        
+        #experience-btn {
+            border-radius: 10px 0 0 10px;
+        }
+
+        #education-btn {
+            border-radius: 0 10px 10px 0;
+        }
+    }
+
+    .work-grid {
+        margin-left: 7%;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        padding-bottom: 1.2rem;
+
+        .title {
+            text-align: right;
+            padding-right: 3rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding-bottom: .5rem;
+        }
+
+        .time {
+            padding-left: 1rem;
+            text-align: right;
+            padding-right: 3rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            padding-bottom: 2rem;
+            padding-left: 25%;
+        }
+
+        h3 {
+            padding-bottom: .5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }            
+    }
+}
+
+.eng,
+.hun {
+    transition:  transform 1s ease-in-out; 
+}
+
+.eng {
+    background-image: url(../../../assets/cv/cv-bg-eng.png);
+    background-position: bottom right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+    min-width: 100vw;
+    transform: translateX(-100%); 
+    
+    .content {
+        display: grid;
+        grid-template-columns: 10% 90%;
+
+        .icons {
+            display: flex;
+            margin-left: -30%;
+            position: static;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .fleg {
+                position: absolute;
+                left: 2vw;
+                top: 13vh;
+                z-index: 10;
+
+                p {
+                    text-align: center;
+                    margin-left: -50%;
+                    margin-bottom: 1rem;
+                }
+
+                button {
+                    border: none;
+                    background-color: transparent;
+                    transition: .5s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.4);
+                    }
+                }    
+            }
+
+            .software-text {
+                position: absolute;
+                top: 30vh;
+                left: 2vw;
+                font-size: 2.5rem;
+            }
+
+            .logo-1, 
+            .logo-2, 
+            .logo-3, 
+            .logo-4 {
+                width: 30px;
+                
+                img{
+                    width: 100%;
+                }
+            }
+
+            .logo-1 {
+                position: absolute;
+                top: 55vh;
+                left: 2vw;
+            } 
+            .logo-2 {
+                position: absolute;
+                top: 60vh;
+                left: 2vw;
+            } 
+            .logo-3 {
+                position: absolute;
+                top: 65vh;
+                left: 2vw;
+            } 
+            .logo-4 {
+                position: absolute;
+                top: 70vh;
+                left: 2vw;
+            }
+        }
+
+        .text {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            margin-left: -5%;
+            color: var(--main-color);
+
+            .right {
+                margin-left: -10%;
+            }
+
+            .bio {
+                display: grid;
+                grid-template-columns: 60% 40%;
+                padding-top: 5vh;
+                text-align: center;
+            }
+
+            .section-select {
+                width: 60%;
+            }
+        }
+    }
+}
+
+.on-screen-eng {
+    transform: translateX(-100%);
+    transform: translateX(0);
+
+}
+
+.hun {
+    background-image: url(../../../assets/cv/cv-bg-hun.png);
+    background-position: bottom left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+    transform: translateX(0);
+
+    .content {
+        display: grid!important;
+        grid-template-columns: 90% 10%;
+
+        .text {
+            display: grid;
+            grid-template-columns: 75% 25%;
+            margin-right: -5%;
+        }
+
+        .icons {
+            position: relative!important;
+            min-height: 100vh;
+            display: flex!important;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            padding-top: 10vh;
+            margin-right: -5%;
+
+            .fleg-hun {
+                width: 25px;
+                height: 23px;
+                position: absolute;
+                right: 2vw;
+                top: 23vh;
+                z-index: 10;
+
+                button {
+                    border: none;
+                    background-color: transparent;
+                    transition: .5s ease-in-out;
+
+                    svg {
+                        height: 90%;
+                        width: 90%;
+                    }
+
+                    &:hover {
+                        transform: scale(1.4);
+                    }
+                }    
+            }
+
+            .software-text {
+                position: absolute;
+                top: 30vh;
+                right: 2vw;
+                font-size: 2.5rem;
+                transform: rotate(180deg);
+            }
+
+            .logo-1, 
+            .logo-2, 
+            .logo-3, 
+            .logo-4 {
+                width: 30px;
+                
+                img{
+                    width: 100%;
+                }
+            }
+
+            .logo-1 {
+                position: absolute;
+                top: 55vh;
+                right: 2vw;
+            } 
+            .logo-2 {
+                position: absolute;
+                top: 60vh;
+                right: 2vw;
+            } 
+            .logo-3 {
+                position: absolute;
+                top: 65vh;
+                right: 2vw;
+            } 
+            .logo-4 {
+                position: absolute;
+                top: 70vh;
+                right: 2vw;
+            }
+
+        }
+
+        .bio {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            padding-top: 5vh;
+            text-align: center;
+        }
+
+        .section-select {
+            width: 80%;
+            justify-content: end;
+        }
+
+        #experience-hun .work-grid{
+            grid-template-columns: 60% 40%;
+        }
+
+        #education-hun .work-grid{
+            grid-template-columns: 60% 40%;
+        }
+
+    }
+}
+
+.on-screen-hun {
+    transform: translate(0);
+    transform: translateX(-100%);
+
+}
+
+
+
+
+

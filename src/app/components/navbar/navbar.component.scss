@@ -1,0 +1,146 @@
+@import url(../../../styles.scss);
+
+.nav-container {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .nav-container {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 0;
+        padding: 2rem;
+        width: 500px;
+        z-index: 100;
+    
+        .navigation {
+            background-color: var(--main-color);
+            height: 70px;
+            width: 400px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+    
+            ul {
+                display: flex;
+                width: 350px;
+    
+                li {
+                    position: relative;
+                    list-style-type: none;
+                    width: 70px;
+                    height: 70px;
+                    z-index: 1;
+    
+                    &:hover a .icon {
+                        transform: translateY(-25px);
+                    }
+    
+                    &:hover a .text {
+                        opacity: 1;
+                        transform: translateY(10px);
+                    }
+    
+                    &.active a .icon {
+                        transform: translateY(-35px);
+                    }
+    
+                    &.active a .text {
+                        opacity: 1;
+                        transform: translateY(10px);
+                    }
+    
+                    a {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 100%;
+                        text-align: center;
+                        font-weight: 500;
+    
+                        .icon {
+                            position: relative;
+                            display: block;
+                            width: 30px;
+                            line-height: 75px;
+                            text-align: center;
+                            transition: .5s;
+                
+                            img {
+                                width: 100%;
+                            }
+                        }
+    
+                        .text {
+                            position: absolute;
+                            color: var(--secondary-color);
+                            font-weight: 500;
+                            font-size: 1rem;
+                            letter-spacing: 0.05rem;
+                            transition: .5s;
+                            opacity: 0;
+                        }
+                    }
+    
+                    &:nth-child(1).active ~ .indicator {
+                        transform: translate(calc(70px * 0));
+                    }
+                    &:nth-child(2).active ~ .indicator {
+                        transform: translate(calc(70px * 1));
+                    }
+                    &:nth-child(3).active ~ .indicator {
+                        transform: translate(calc(70px * 2));
+                    }
+                    &:nth-child(4).active ~ .indicator {
+                        transform: translate(calc(70px * 3));
+                    }
+                    &:nth-child(5).active ~ .indicator {
+                        transform: translate(calc(70px * 4));
+                    }
+                }
+    
+                .indicator {
+                    position: absolute;
+                    top: -50%;
+                    width: 70px;
+                    height: 70px;
+                    background-color: var(--secondary-color);
+                    border-radius: 50%;
+                    border: 6px solid white;
+                    transition: .5s;
+    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -22px;
+                        width: 20px;
+                        height: 20px;
+                        background: var(--main-color);
+                        border-top-right-radius: 20px;
+                        box-shadow: 0px -10px 0 0 white;
+                    }
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: -22px;
+                        width: 20px;
+                        height: 20px;
+                        background: var(--main-color);
+                        border-top-left-radius: 20px;
+                        box-shadow: 0px -10px 0 0 white;
+                    }
+                }
+            }
+        
+            
+        }
+    }
+}

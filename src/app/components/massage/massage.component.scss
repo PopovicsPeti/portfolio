@@ -1,0 +1,129 @@
+.display-none {
+    display: none!important;
+}
+
+
+
+.container-massage {
+    display: block;
+    max-width: max-content;
+    padding-top: 10vh;
+    background-image: url(../../../assets/massage/massage-bg.png);
+    background-position: bottom right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;   
+
+
+    .massage {
+        max-width: 100%;
+        column-gap: 1rem;
+
+        .text {
+            padding-top: 1rem;
+            padding-left: 2rem;
+          
+            h2 {
+                padding-bottom: 3rem
+            }
+
+            p {
+                text-align: justify ;
+                margin-bottom: 2rem;
+            }
+
+            ol {
+
+                .secondary-list {
+                    list-style-type: none;
+                }
+
+                .secondary-list li::before {
+                    content: '';
+                    display: inline-block;
+                    height: 1rem;
+                    width: 1rem;
+                    background-image: url(../../../assets/massage/list-icon.png);
+                    background-position: bottom center;
+                    background-size: cover;
+                    margin-right: .6rem;
+                  }
+                
+                .main-li {
+                    margin: 1.5rem 0 .8rem 0;
+                }
+
+                .list-details {
+                    list-style-type: none;
+                    font-style: italic;
+
+                    li::before {
+                        content: '';
+                        background-image: none;
+                      }
+                }
+            }
+
+            .users {
+                margin-top: 3rem;
+                
+                .user-head {
+                    text-align: center;
+                }
+
+                table {
+                    margin: 0 auto 3rem auto;
+                    table-layout: fixed;
+                    width: 100%;
+                    border-collapse: collapse;
+                    border: 3px solid var(--main-color);
+
+                    thead th:nth-child(1) {
+                        width: 20%;
+                      }
+                      
+                      thead th:nth-child(2) {
+                        width: 50%;
+                      }
+                      
+                      thead th:nth-child(3) {
+                        width: 30%;
+                      }
+                      
+                      th,
+                      td {
+                        padding: 5px;
+                      }
+
+                      thead {
+                        background-color: rgba(var(--main-color-rgb), .9);
+                        color: white;
+                      }
+
+                      tbody tr:nth-child(even) {
+                        background-color: rgba(var(--secondary-color-rgb), .9);
+                      }
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 767px) {
+  .container-massage {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 1200px) {
+    .container-massage {
+      display: grid;
+      grid-template-columns:20% 80%; 
+
+      .text {
+        width: 90%;
+      }
+    }
+}

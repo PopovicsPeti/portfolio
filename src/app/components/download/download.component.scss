@@ -1,0 +1,231 @@
+.display-none {
+    display: none;
+}
+
+.language-btn {
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    button {
+        border: none;
+        background-color: transparent;
+        transition: .5s ease-in-out;
+        width: 50px;
+        height: 50px;
+
+        &:hover {
+            transform: scale(1.4);
+        }
+    }    
+}
+
+
+.container-download {
+    position: fixed;
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: 100;
+    background: rgba(0, 0, 0, .8);
+
+
+    .downloads {
+        position: fixed;
+        top: 10vh;
+        left: 10vw;
+        width: 80vw;
+        display: flex;
+        place-items: center;
+        background-color: rgb(136, 136, 136);
+        border-radius: 15px;
+        padding: 5rem;
+
+        #hun-download,
+        #eng-download {
+            width: 100%;
+        }
+
+        .close {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+
+            .back-btn {
+                padding: .5rem 2rem;
+                border: 2px solid var(--secondary-color);
+                border-radius: 1rem;
+                color: var(--secondary-color);
+                font-size: 1.2rem;
+                font-weight: 600;
+                background-color: transparent;
+                transition: .5s ease-in-out;
+
+                &:hover {
+                    background: var(--secondary-color);
+                    color: white;
+                }
+
+            }
+        }
+        
+
+        h1 {
+            text-align: center;
+            padding-bottom: 2rem;
+        }
+
+        .downloadable {
+            display: flex;
+            justify-content: space-between;
+
+            label {
+                font-size: 1.2rem;
+                font-weight: 600;
+                width: 70%;
+            }
+        }
+        
+    }
+}
+
+/*
+            <!-- CV HUN 1 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                    for="btncheck1">
+                CV HUN
+            </label>
+            <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+            <!-- CV ENG 2 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck2">
+                    CV ENG
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+                
+            </div>
+
+            <!-- MOTIVATION HUN 3 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck3">
+                    MOTIVÁCIÓS LEVÉL HUN
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+            <!-- MOTIVATION ENG 4 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck4">
+                    MOTIVATION ENG
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+            <!-- MASSAGE HUN 5-->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck5">
+                    MASSZÁZS APP HUN
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+            <!--  MASSAGE ENG 6 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck6">
+                    MASSAGE APP ENG
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+
+            <!-- WEATHER HUN 7 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck7">
+                    IDŐJÁRÁS APP HUN
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+
+            <!-- WEATHER ENG 8 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck8">
+                        WEATHER APP ENG
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+            <!-- SPACE HUN 9 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck9">
+                    ŰR APP HUN
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+
+            <!-- SPACE ENG 10 -->
+            <div class="col-sm-12 col-md-6">
+                <label class="col-sm-2 col-form-label col-form-label-sm" 
+                        for="btncheck10">
+                    SPACE APP ENG
+                </label>
+                <a href="portfolio\src\downloadable-content\Peter_Popovics_CV(ENG).pdf"
+                download
+                class="disabled">
+                <i class="fa-solid fa-download"></i>
+            </a>
+            </div>
+
+
+*/

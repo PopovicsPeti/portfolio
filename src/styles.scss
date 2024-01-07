@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+
+
+  :root {
+    --main-color: #222B13;
+    --main-color-rgb: 34, 43, 19;
+    --secondary-color: #fbae3c;
+    --secondary-color-rgb: 251, 174, 60;
+
+    --main-ff: 'Montserrat', sans-serif;;
+    --hand-ff: 'Cormorant Garamond', serif;
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-ff);
+    font-size: 1rem;
+}

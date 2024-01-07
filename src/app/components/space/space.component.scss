@@ -1,0 +1,118 @@
+.display-none {
+    display: none!important;
+}
+
+* {
+    font-size: 1.2rem;
+}
+
+.container-space {
+    background-image: url(../../../assets/space/space-gb2.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .documentation{
+
+        #eng {
+            padding-top: 15vh;
+        }
+
+        #hun {
+            padding-top: 10vh;
+        }
+
+        padding: 2rem;
+
+        .text {
+            h2 {
+                padding-bottom: 3rem
+            }
+
+            p {
+                text-align: justify ;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .large-btn-container {
+            display: none;
+        }
+    }
+}
+
+
+@media (min-width: 768px) {     //and (max-width: 1199px)
+    .container-space {
+    
+        .documentation{
+            display: grid;
+            grid-template-columns: 70% 30%;
+            padding-top: 2rem;
+
+            .text {
+                margin: 0 auto;
+                padding: 1rem 2rem;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .container-space {
+        padding-top: 15vh;
+        display: grid;
+        grid-template-columns: 20% 80%;
+    
+        .documentation{
+    
+            .text {
+                width: 90%;
+            }
+
+            .large-btn-container {
+                display: block!important;
+                justify-content: center;
+                padding-top: 15vh;
+                
+                .large-btn {
+                    font-size: 2rem;
+                    transform: translateX(25%);
+                    font-weight: 600;
+                    position: relative;
+                    display: inline-grid;
+                    z-index: 1;
+                    place-content: center;
+                    padding: 0 2em;
+                    border-radius: 50%;
+                    aspect-ratio: 1;
+                    text-decoration: none;
+                    background-color: white;
+                    color: black;
+                
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(256, 256, 256, .15);
+                        border-radius: inherit;
+                        opacity: 0;
+                        transition: opacity .5s linear, transform .75s ease-in-out;
+                    }
+                
+                    &:hover::after {
+                        opacity: 1;
+                        transform: scale(1.5);
+                    }
+                }
+            }
+        }
+    }
+}

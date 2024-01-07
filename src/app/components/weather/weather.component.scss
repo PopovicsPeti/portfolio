@@ -1,0 +1,192 @@
+.display-none {
+    display: none!important;
+}
+
+.massage-icon,
+.space-icon,
+.cv-icon,
+.motivation-icon {
+    display: none;
+}
+
+.massage-bg,
+.space-bg,
+.cv-bg,
+.motivation-bg {
+    display: none;
+}
+
+.weather-container {
+    position: relative;
+    padding-top: 15vh;
+    background-image: url(../../../assets/weather/weather-bg.jpeg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+    transition: .5s ease-in-out;
+    z-index: 1;
+   
+    .text {
+        margin: 1rem;
+        width: 94%;
+        background-color: rgba(0, 0, 0, .6);
+        backdrop-filter: 1.5rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+}
+
+@media (max-width:767px) {
+    .weather-container {
+        padding-top: 5vh;
+        display: flex;
+        flex-direction: column-reverse;
+    
+        .text {
+            width: 90%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .weather-container {
+        display: grid;
+        grid-template-columns: 20% 80%;    
+       
+        .text {
+            height: 32rem;
+        }
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes fadeout {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+    
+    .show {
+        animation: fadein 1s ease-in alternate forwards!important;
+    }
+    
+    .hide {
+        animation: fadeout 1s ease-in alternate forwards!important;
+        z-index: 0;
+    }
+    
+    .massage-icon,
+    .space-icon,
+    .cv-icon,
+    .motivation-icon {
+        display: flex;
+        position: fixed;
+        text-align: center;
+        width: 4rem;
+        background-color: rgba(0, 0, 0, .6);
+        border-radius: 0 0 20px 20px;
+        z-index: 10!important;
+        transition: 1s ease-in-out;
+        opacity: 1!important;
+    
+        a {
+            img {
+                width: 80%;
+                transition: 1s ease-in-out;
+    
+                &:hover {
+                    width: 100%;
+                }
+            }
+    
+            &:hover ~ .massage-bg {
+                opacity: 1;
+            }
+        }
+    }
+    
+    .massage-icon,
+    .space-icon { 
+        top: 0;
+        
+        &:hover {
+            transform: scale(1.4) translateY(.5rem);
+        }
+    }
+    
+    .massage-icon {
+        left: 33%;
+    }
+    
+    .space-icon {
+        left:66%;
+    }
+    
+    .cv-icon,
+    .motivation-icon {
+        top: 33%;
+        right: 0;
+        border-radius: 20px 0 0 20px;
+    
+        &:hover {
+            transform: scale(1.4) translateX(-.5rem);
+        }
+    }
+    
+    .motivation-icon {
+        top: 66%;
+    }
+    
+    .massage-bg,
+    .space-bg,
+    .cv-bg,
+    .motivation-bg {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: top;
+        background-size: cover;   
+        opacity: 0;
+        text-align: center;
+    
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+    
+    .massage-bg {
+        background-image: url(../../../assets/weather/massage-weather-bg.jpg);
+    }
+    
+    .space-bg {
+        background-image: url(../../../assets/weather/rainy-weather-bg.jpg);
+        color: white;
+    }
+    
+    .cv-bg {
+        background-image: url(../../../assets/weather/snow-weather-bg.jpg);
+        
+        p {
+            background-color: rgba(0, 0, 0, .6);
+            border-radius: 1rem;
+            color: white;
+            padding: 2rem;
+        }
+    }
+    
+    .motivation-bg {
+        background-image: url(../../../assets/weather/wind-weather-bg.jpg);
+    }
+}

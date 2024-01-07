@@ -1,0 +1,84 @@
+.display-none {
+    display: none!important;
+}
+
+.language-btn {
+    display: none;
+}
+
+.container-motivation {
+    color: rgb(36, 36, 36);
+    padding-inline: 1vw;
+    background-image: url(../../../assets/motivation/motivation-bg-2.jpg);
+    min-height: 100vh;
+    
+    .letter {
+        padding-bottom: 2rem;
+        color: rgb(27, 27, 27);
+        
+        .text {
+            width: 95%;
+            text-align: justify;
+            margin-left: 1rem;
+            padding: 2rem;
+            background-color: var(--secondary-color);
+            box-shadow: -10px 10px 10px rgba(var(--secondary-color-rgb), .3), 
+                        -10px -10px 10px rgba(var(--secondary-color-rgb), .3);
+
+            h2 {
+                margin-bottom: 2rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+            
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .container-motivation {
+        padding-top: 10vh;
+
+        .letter {
+            display: block;
+            
+            .text {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .letter {
+        display: grid;
+        grid-template-columns: 20% 80%;
+
+        .text {
+            margin-top: 10vh;
+        }
+        
+        .pic {
+            background-image: url(../../../assets/motivation/motivation-bg.png);
+            background-position: center left;
+            background-size: 50vh;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .language-btn {
+        display: block!important;
+    }
+
+    .letter {
+        .pic {
+            background-position: bottom left;
+            background-size: cover;
+        }
+    }
+}

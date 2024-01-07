@@ -1,0 +1,245 @@
+<div class="container-massage">
+    <app-side-bar
+        [git]="'https://github.com/PopovicsPeti/ngmassage'"
+        [host]="'https://ng-massage-4ea7c.firebaseapp.com/home'"
+    ></app-side-bar>
+    <section id="eng" class="row massage" *ngIf="!isHungarianMassage">
+        <article class="text">
+            <h2>Massage application</h2>
+            <p>
+                I have made a desktop application for a massage company.The page was built in mobile first aproach. I used Angular framework and Bootstrap to build the project work. I embedded a third party booking application (Salonic) into my webpage in order to manage the appointment booking feature. Storing the data and the users I utilized the Google Fire Base and I installed the Angular Materials for improveing the UX. 
+            </p>
+            <p>
+                This work is a presentation so all of the features that it contains can be tried. I have saved the database so time to time I restore the data for further usage.
+            </p> 
+            <p>
+                This is a single page application with rooting service. The public part of the webpage mostly contains static pages that were styled in a unified way.
+                The services page is an exception because it is using data binding to generate the content.
+                Those functions which require registration uses the Firebase Auth Rest Api and they implement http requests (POST, GET, DELETE) between the Google Firebase and the project work.
+                I have established a unique data structure for organizing the data, furthermore I put interceptor and auth guard components into the application.  
+            </p>
+            <p>
+                This application contains three major units.
+            </p>
+
+            <ol>
+                <li class="main-li"><b>Public components</b> <br> 
+                    These pages can be used without registration. It serves to inform the users about basic information from the company and the workers.
+                </li>
+                    <ul class="secondary-list">
+                        <li>home page</li>
+                        <li>services</li>
+                        <li>booking (Salonic application link)</li>
+                        <li>contacts</li>
+                        <li>log in</li>
+                    </ul>
+                <li class="main-li"><b>Registered user unit.</b> <br>
+                        This component stores the user’s data.
+                </li>
+                    <ul class="secondary-list">
+                        <li>booking page of the profile</li>
+                            <ul class="list-details">
+                                <li>The users can delete their profile and they can check their appointments as well. </li>
+                                <li>This page has a badge which will be active if the user has at least 10 successful appointments.
+                                </li>
+                            </ul>
+                        <li>the howl appointment calendar</li>
+                        <li>medical contract</li>
+                            <ul class="list-details">
+                                <li>They can fill their medical status in order to make the therapy more useful.</li>
+                            </ul>
+                        <li>medical records</li>
+                            <ul class="list-details">
+                                <li>the therapist can write notes and tips in here to the user.</li>
+                            </ul>
+                    </ul>
+                <li class="main-li"><b>Admin page.</b> <br>
+                    Only admins can reach this section. The application stores all of the users’ data here that the admin can check and modify.
+                    The admin can do the followings:
+                </li>
+                    <ul class="secondary-list">
+                        <li>the personal and medical information about the user (check)</li>
+                        <li>the appointments (check, create, modify, delete)</li>
+                        <li>the medical records (check, create, modify, delete)</li>
+                        <li>the user’s profile (delete)</li>
+                    </ul>
+            </ol>
+            <div class="users">
+                <p class="user-head">These are the usable fictive users</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>role</th>
+                            <th>user name</th>
+                            <th>password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>admin</td>
+                            <td>p.popovics92@gmail.com</td>
+                            <td>Admin-admin</td>
+                        </tr>
+                        <tr>
+                            <td>user</td>
+                            <td>lorinc.regina@gmail.com</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>user</td>
+                            <td>kovacs.tamas@gmail.com</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>user</td>
+                            <td>johny@gmail.com</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>user</td>
+                            <td>pistike12@freemail.hu</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>user</td>
+                            <td>csorijozsi123@freemail.com</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>user</td>
+                            <td>kelemen.klaei80@vipmail.hu</td>
+                            <td>12345678</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+
+    <!-- ------- -->
+    <!--   HUN   -->
+    <!-- ------- -->
+    <section id="hun" class="row massage" *ngIf="isHungarianMassage">
+        <article class="text">
+            <h2>Masszázs weblap</h2>
+            <p>
+                A projektmunkámban egy masszázsszalon asztali alkalmazását készítettem el. Az oldalt responsive kialakítással Angular keretrendszerben, Bootstrap segítségével hoztam létre. Az alkalmazás megvalósításánál külsős foglalási applikációt integráltam (Salonic) az időpont foglalási funkcióhoz. Az adatok és felhasználók tárolására a Google Firebase-t használtam, míg az adatok megjelenítését Angular Materials segítségével valósítottam meg a felhasználói élmény emelése érdekében.
+            </p>
+            <p>
+                A projektmunkámat bemutatónak szánom, melynek minden funkciója kipróbálható az adatbázisról biztonsági mentés készült. Az adatokat pár naponta visszaállítom a zavartalan próbahasználat érdekében.
+            </p> 
+            <p>
+                A munkámat single page webapplikáció-ként készítettem el, ami routing segítségével tölti be a tartalmakat. A publikus rész főként statikus oldalakat tartalmaz melyeket egységes dizájnnal láttam el.
+                Kivételt képez a szolgáltatások oldal, ami adatkötés segítségével generálja ki az igénybe vehető kezelések listáját.
+                A regisztrációhoz kötött menüpontok Firebase Auth REST API segítségével a Google Firebase irányába valósítanak meg http kéréseket (POST, GET, DELET).
+                Az adatok rendezésére saját adatszerkezeteket hoztam létre, továbbá http interceptor és auth guard funkciók is kerültek a projektbe. 
+            </p>
+            <p>
+                Az alkalmazás három fő részre bontható melyek:
+            </p>
+
+            <ol>
+                <li class="main-li"><b>Publikus komponensek.</b> <br>         
+                    A projektmunka ezen részei regisztráció nélkül látogathatóak. A felhasználók számára általános információkkal szolgálnak a szalonról és annak munkatársairól.
+                </li>
+                    <ul class="secondary-list">
+                        <li>kezdő lap</li>
+                        <li>szolgáltatások</li>
+                        <li>foglalás (Salonic applikáció hivatkozása)</li>
+                        <li>elérhetőségek</li>
+                        <li>bejelentkezés</li>
+                    </ul>
+                <li class="main-li"><b>Regisztráció után használható szolgáltatások</b> <br>
+                    Ezek a komponensek a felhasználók adatait tárolják.
+                </li>
+                    <ul class="secondary-list">
+                        <li>a profil fogadó oldala</li>
+                            <ul class="list-details">
+                                <li>
+                                    Itt a profil törölhető illetve a következő foglalás időpont található a törzsvásárlói
+                                </li> 
+                                <li>
+                                    státusz „kitüntetéssel” egyetemben. (10 teljesült kezelés után válik aktívvá)
+                                </li>
+                            </ul>
+                        <li>a teljes foglalási naptár</li>
+                        <li>az egészségügyi nyilatkozat</li>
+                            <ul class="list-details">
+                                <li>Itt adják meg a páciensek az adataikat, melyek a számlázáshoz és a kezelésekhez szükségesek.</li>
+                            </ul>
+                        <li>kórlap</li>
+                            <ul class="list-details">
+                                <li>
+                                    Ez a menüpont a kezelés alatt felmerült tippeket esetleges ajánlásokat
+                                </li> 
+                                <li>
+                                    tartalmazzák, amiket a kezelő ír a vendégek részére.
+                                </li>
+                            </ul>
+                    </ul>
+                <li class="main-li"><b>Adminisztrátori felület</b> <br>
+                    A webapplikáció ezen része csak az admin számára elérhető itt a felhasználók listája található ahol menedzselhetőek a vendégekkel kapcsolatos adminisztratív feladatok.
+                </li>
+                    <ul class="secondary-list">
+                        <li>megtekinthetőek a személyes és az egészségügyi adatai a felhasználóknak</li>
+                        <li>foglalások rendezése (felvétel, módosítás, törlés)</li>
+                        <li>„kórlap” illetve megjegyzések kezelése (felvétel, módosítás, törlés)</li>
+                        <li>vendég profiljának törlése</li>
+                    </ul>
+            </ol>
+            <div class="users">
+                <p class="user-head">Az alábbiakban fiktív felhasználók adatait tüntetem fel</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>szint</th>
+                            <th>felhasználó név</th>
+                            <th>jelszó</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>adminisztrátor</td>
+                            <td>p.popovics92@gmail.com</td>
+                            <td>Admin-admin</td>
+                        </tr>
+                        <tr>
+                            <td>felhasználó</td>
+                            <td>lorinc.regina@gmail.com</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>felhasználó</td>
+                            <td>kovacs.tamas@gmail.com</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>felhasználó</td>
+                            <td>johny@gmail.com</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>felhasználó</td>
+                            <td>pistike12@freemail.hu</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>felhasználó</td>
+                            <td>csorijozsi123@freemail.com</td>
+                            <td>12345678</td>
+                        </tr>
+                        <tr>
+                            <td>felhasználó</td>
+                            <td>kelemen.klaei80@vipmail.hu</td>
+                            <td>12345678</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+</div>
+
+
