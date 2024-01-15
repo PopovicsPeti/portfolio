@@ -1,74 +1,49 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from 'src/app/language.service';
+
+const images = {
+  default: '../../../assets/weather/weather-bg.jpeg',
+  message: '../../../assets/weather/massage-weather-bg.jpg',
+  space: '../../../assets/weather/rainy-weather-bg.jpg',
+  cv: '../../../assets/weather/snow-weather-bg.jpg',
+  motivation: '../../../assets/weather/wind-weather-bg.jpg',
+};
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.scss']
+  styleUrls: ['./weather.component.scss'],
+  animations: [
+    trigger('fadeIn', [
+      state('in', style({ 'opacity': '1' })),
+      state('out', style({ 'opacity': '0' })),
+      transition('* => *', [
+        animate(2000)
+      ])
+    ])
+  ]
 })
 export class WeatherComponent implements OnInit {
-  private isAnimating: boolean = false;
+  imageURLs = images;
   isHungarianWeather: boolean = false;
+  imageURL = images.default;
+  state = 'in';
 
-  constructor(private LS: LanguageService) { }
+  constructor(private LS: LanguageService) {}
 
   ngOnInit(): void {
     this.LS.isHungarianLanguage$.subscribe((isHungarian) => {
-        this.isHungarianWeather = isHungarian;
-      });
+      this.isHungarianWeather = isHungarian;
+    });
   }
 
-  private handleAnimationEnd() {
-    this.isAnimating = false;
+  handleHover(url: string) {
+    console.log('Not animating');
+    this.imageURL = url;
   }
 
-  handleHover(bg: string) {
-    if (!this.isAnimating) {
-      this.isAnimating = true;
-
-      const background = document.querySelector(`${bg}`);
-      const weatherContainer = document.querySelector('.weather-container');
-
-      if (weatherContainer && !weatherContainer.classList.contains('hide')) {
-        weatherContainer.classList.add('hide');
-        weatherContainer.classList.remove('show');
-      }
-
-      if (background && !background.classList.contains('show')) {
-        background.classList.add('show');
-        background.classList.remove('hide');
-
-        background.addEventListener('animationend', () => {
-          this.handleAnimationEnd();
-        });
-      } else {
-        this.handleAnimationEnd();
-      }
-    }
-  }
-
-  handleHoverExit(bg: string) {
-    if (!this.isAnimating) {
-      this.isAnimating = true;
-
-      const background = document.querySelector(`${bg}`);
-      const weatherContainer = document.querySelector('.weather-container');
-
-      if (weatherContainer && !weatherContainer.classList.contains('show')) {
-        weatherContainer.classList.add('show');
-        weatherContainer.classList.remove('hide');
-      }
-
-      if (background && !background.classList.contains('hide')) {
-        background.classList.add('hide');
-        background.classList.remove('show');
-
-        background.addEventListener('animationend', () => {
-          this.handleAnimationEnd();
-        });
-      } else {
-        this.handleAnimationEnd();
-      }
-    }
+  handleHoverExit() {
+    this.imageURL = this.imageURLs.default;
   }
 }

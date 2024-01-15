@@ -1,21 +1,3 @@
-.display-none {
-    display: none!important;
-}
-
-.massage-icon,
-.space-icon,
-.cv-icon,
-.motivation-icon {
-    display: none;
-}
-
-.massage-bg,
-.space-bg,
-.cv-bg,
-.motivation-bg {
-    display: none;
-}
-
 .weather-container {
     position: relative;
     padding-top: 15vh;
@@ -25,7 +7,8 @@
     min-height: 100vh;
     overflow: hidden;
     color: white;
-    transition: .5s ease-in-out;
+    transition:
+        background-image .4s ease-in-out;
     z-index: 1;
    
     .text {
@@ -59,25 +42,6 @@
             height: 32rem;
         }
     }
-
-    @keyframes fadein {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    
-    @keyframes fadeout {
-        from { opacity: 1; }
-        to { opacity: 0; }
-    }
-    
-    .show {
-        animation: fadein 1s ease-in alternate forwards!important;
-    }
-    
-    .hide {
-        animation: fadeout 1s ease-in alternate forwards!important;
-        z-index: 0;
-    }
     
     .massage-icon,
     .space-icon,
@@ -90,7 +54,7 @@
         background-color: rgba(0, 0, 0, .6);
         border-radius: 0 0 20px 20px;
         z-index: 10!important;
-        transition: 1s ease-in-out;
+        transition: 0.4s ease-in-out;
         opacity: 1!important;
     
         a {
@@ -164,29 +128,5 @@
             font-size: 2rem;
             font-weight: 700;
         }
-    }
-    
-    .massage-bg {
-        background-image: url(../../../assets/weather/massage-weather-bg.jpg);
-    }
-    
-    .space-bg {
-        background-image: url(../../../assets/weather/rainy-weather-bg.jpg);
-        color: white;
-    }
-    
-    .cv-bg {
-        background-image: url(../../../assets/weather/snow-weather-bg.jpg);
-        
-        p {
-            background-color: rgba(0, 0, 0, .6);
-            border-radius: 1rem;
-            color: white;
-            padding: 2rem;
-        }
-    }
-    
-    .motivation-bg {
-        background-image: url(../../../assets/weather/wind-weather-bg.jpg);
     }
 }

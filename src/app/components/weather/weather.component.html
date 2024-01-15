@@ -1,49 +1,53 @@
 
 <div class="massage-icon" >
     <a routerLink="/massage-website"
-        (mouseenter)="handleHover('.massage-bg')" 
-        (mouseleave)="handleHoverExit('.massage-bg')">
+        (mouseenter)="handleHover(imageURLs.message)" 
+        (mouseleave)="handleHoverExit()">
         <img src="../../../assets/navbar/spa.png" alt="">
     </a>
 </div>
+
 <div class="massage-bg">
     <p> {{ isHungarianWeather ?  'TOVÁBB A MASSZÁZS OLDAL DOKUMENTÁCIÓJÁHOZ' : 'GO TO THE DOCUMENTATION OF THE MASSAGE PAGE' }} </p>
 </div>
 
 <div class="space-icon">    
     <a routerLink="/space-travel"
-        (mouseenter)="handleHover('.space-bg')" 
-        (mouseleave)="handleHoverExit('.space-bg')">
+        (mouseenter)="handleHover(imageURLs.space)" 
+        (mouseleave)="handleHoverExit()">
         <img src="../../../assets/navbar/planet.png" alt="">
     </a>
 </div>
+
 <div class="space-bg">
     <p>{{ isHungarianWeather ?  'TOVÁBB AZ ŰR APP DOKUMENTÁCIÓJÁHOZ' : 'GO TO THE DOCUMENTATION OF THE SPACE TRAVEL PAGE' }}</p>
 </div>
 
 <div class="cv-icon">
     <a routerLink="/cv"
-        (mouseenter)="handleHover('.cv-bg')" 
-        (mouseleave)="handleHoverExit('.cv-bg')">
+        (mouseenter)="handleHover(imageURLs.cv)" 
+        (mouseleave)="handleHoverExit()">
         <img src="../../../assets/navbar/about.png" alt="">
     </a>
 </div>
+
 <div class="cv-bg">
     <p>{{ isHungarianWeather ?  'TOVÁBB AZ ÖNÉLETRAJZHOZ' : 'GO TO THE RESUME PAGE ' }}</p>
 </div>
 
 <div class="motivation-icon">
     <a routerLink="/motivation-letter"
-        (mouseenter)="handleHover('.motivation-bg')" 
-        (mouseleave)="handleHoverExit('.motivation-bg')">
+        (mouseenter)="handleHover(imageURLs.motivation)" 
+        (mouseleave)="handleHoverExit()">
         <img src="../../../assets/navbar/motivation.png" alt="">
     </a>
 </div>
+
 <div class="motivation-bg">
     <p>{{ isHungarianWeather ?  'TOVÁBB A MOTIVÁCIÓKHOZ' : 'GO TO THE MOTIVATION PAGE' }} </p>
 </div>
 
-<div class="weather-container">
+<div class="weather-container" [ngStyle]="{'background-image': 'url(' + imageURL + ')'}" [@fadeIn]="state">
     <app-side-bar [background]="true"
     [git]="'https://github.com/PopovicsPeti/weather_forecast'"
     [host]="'https://weather-forecast-69fe0.web.app'"
@@ -75,6 +79,7 @@
             </ul>
         </article>
     </section>
+
     <section id="hun" class="row documentation" *ngIf="isHungarianWeather">
         <article class="text">
             <h2>Időjárás előrejelzés</h2>
@@ -101,4 +106,4 @@
             </ul>
         </article>
     </section>
-</div>	
+</div>
