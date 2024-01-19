@@ -8,20 +8,27 @@ import { MassageComponent } from './components/massage/massage.component';
 import { CvComponent } from './components/cv/cv.component';
 import { MenuComponent } from './components/menu/menu.component';
 
-
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'menu', component: MenuComponent},
-  {path: 'cv', component: CvComponent},
-  {path: 'motivation-letter', component: MotivationComponent},
-  {path: 'space-travel', component: SpaceComponent},
-  {path: 'weather-forecast', component: WeatherComponent},
-  {path: 'massage-website', component: MassageComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, data: { hiddenNavbar: true } },
+  { path: 'menu', component: MenuComponent, data: { hiddenNavbar: true } },
+  { path: 'cv', component: CvComponent },
+  { path: 'motivation-letter', component: MotivationComponent },
+  {
+    path: 'space-travel',
+    component: SpaceComponent,
+    data: { hiddenNavbar: true },
+  },
+  {
+    path: 'weather-forecast',
+    component: WeatherComponent,
+    data: { hiddenNavbar: true },
+  },
+  { path: 'massage-website', component: MassageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

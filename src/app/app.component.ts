@@ -1,6 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { ActivationStart, Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { LanguageService } from './language.service';
 
@@ -12,6 +12,7 @@ import { LanguageService } from './language.service';
 export class AppComponent implements OnInit {
   previousRoute: string = '';
   public breakpointChange$: Observable<string>;
+  hiddenNavbar = false;
   displayNameMap = new Map([
     [Breakpoints.XSmall, 'xsmall'],
     [Breakpoints.Small, 'small'],
@@ -50,8 +51,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
+      if (event instanceof ActivationStart) {
         this.languageService.setLanguage(false);
+
+        this.hiddenNavbar = event.snapshot.data['hiddenNavbar'];
       }
     });
   }
