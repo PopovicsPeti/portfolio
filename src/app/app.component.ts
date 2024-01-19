@@ -1,50 +1,58 @@
-import { Component } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, OnInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
+import { LanguageService } from './language.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  showNav: boolean = false;
-  showMobileNav: boolean = false;
+export class AppComponent implements OnInit {
   previousRoute: string = '';
+  public breakpointChange$: Observable<string>;
+  displayNameMap = new Map([
+    [Breakpoints.XSmall, 'xsmall'],
+    [Breakpoints.Small, 'small'],
+    [Breakpoints.Medium, 'medium'],
+    [Breakpoints.Large, 'large'],
+    [Breakpoints.XLarge, 'xlarge'],
+  ]);
 
-  constructor(private router: Router) {}
+  constructor(
+    breakpointObserver: BreakpointObserver,
+    private languageService: LanguageService,
+    private router: Router
+  ) {
+    this.breakpointChange$ = breakpointObserver
+      .observe([
+        Breakpoints.XSmall,
+        Breakpoints.Small,
+        Breakpoints.Medium,
+        Breakpoints.Large,
+        Breakpoints.XLarge,
+      ])
+      .pipe(
+        map((result) => {
+          let classValue = '';
 
-  ngOnInit(){
+          for (const query of Object.keys(result.breakpoints)) {
+            if (result.breakpoints[query]) {
+              classValue = this.displayNameMap.get(query) ?? 'Unknown';
+            }
+          }
+
+          return classValue;
+        })
+      );
+  }
+
+  ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
-        this.previousRoute = this.router.url;
-      }
-  
-      if (event instanceof NavigationEnd) {
-        const currentRoute = this.router.url;
-
-        this.showNav = !['', '/', '/home', '/menu', '/weather-forecast', '/space-travel'].includes(currentRoute);
-  
-        if (this.showNav && currentRoute === this.previousRoute) {
-          this.showNav = false;
-        }
-      }
-    });
-
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        this.previousRoute = this.router.url;
-      }
-  
-      if (event instanceof NavigationEnd) {
-        const currentRoute = this.router.url;
-
-        this.showMobileNav = !['', '/', '/home', '/menu'].includes(currentRoute);
-  
-        if (this.showMobileNav && currentRoute === this.previousRoute) {
-          this.showMobileNav = false;
-        }
+        this.languageService.setLanguage(false);
       }
     });
   }
- 
 }

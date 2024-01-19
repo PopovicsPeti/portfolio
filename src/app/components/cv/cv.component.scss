@@ -1,461 +1,241 @@
-@import url(../../../styles.scss);
-
 .hide {
-    display: none;
+  display: none;
 }
 
-#hun,
-#eng {
-    display: none;
-}
+.cv-container {
+  overflow: hidden;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
 
-.cv-container {   
-        .text {
-            color: var(--main-color);
-        }
-    
-        .section-select {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-    
-            #experience-btn,
-            #education-btn,
-            #experience-btn-hun,
-            #education-btn-hun {
-                border: none;
-                padding: .7rem 1.5rem;
-                color: white;
-                font-size: 1.2rem;
-                font-weight: 500;
-                background-color: var(--main-color);
-                transition: .5s ease-in-out;
-                
-                &:hover {
-                    background-color: rgba(var(--main-color-rgb), .8);
-                }
-            }
-            
-            .active {
-                background-color: var(--secondary-color)!important;
-    
-                &:hover {
-                    background-color: var(--secondary-color);
-                }
-            }
-            
-            #experience-btn, 
-            #experience-btn-hun {
-                border-radius: 10px 0 0 10px;
-            }
-    
-            #education-btn,
-            #education-btn-hun {
-                border-radius: 0 10px 10px 0;
-            }
-        }
-    
-        .eng,
-        .hun {
-            .content {
-                display: block;
-                padding: 2rem;
-    
-                .icons {
-                    display: flex!important;
-                    flex-direction: row;
-                    justify-content: start;
-                    margin-bottom: 1rem;
-                    width: 100%;
-            
-                    .fleg{
-                        display: none;
-            
-                        p {
-                            display: none!important;
-                        }
-                    }
-            
-                    .software-text {
-                        display: none;
-                    }
-            
-                    .logo-1, 
-                    .logo-2, 
-                    .logo-3, 
-                    .logo-4 {
-                        width: 50px;
-                        margin: 0 1rem;
-                        
-                        img{
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-    
-            .text {
-                display: flex;
-                flex-direction: column-reverse;
-    
-                .bio {
-                    text-align: center;
-    
-                    h2 {
-                        font-size: 2rem;
-                        font-weight: 600;
-                    }
-                }
-            }
-    
-            .work-grid {
-                margin-left: 7%;
-                display: grid;
-                grid-template-columns: 30% 70%;
-                padding-bottom: 1.2rem;
-        
-                .title {
-                    text-align: right;
-                    padding-right: 3rem;
-                    font-size: 1.2rem;
-                    font-weight: 500;
-                    padding-bottom: .5rem;
-                }
-        
-                .time {
-                    padding-left: 1rem;
-                    text-align: right;
-                    padding-right: 3rem;
-                }
-    
-                h2 {
-                    font-size: 1.6rem;
-                    font-weight: 600;
-                    padding-bottom: 2rem;
-                    padding-left: 25%;
-                }
-    
-                h3 {
-                    padding-bottom: .5rem;
-                    font-size: 1.4rem;
-                    font-weight: 700;
-                }
-    
-                ul {
-                    padding-left: 1.2rem;
-                }            
-            }
-    
-            .experiance {
-                padding-top: 2rem;
-            }
-    
-            .education {
-                padding-top: 2rem; 
-            }
-    
-            .summary {
-                background-color: var(--secondary-color);
-                border-radius: 1rem;
-    
-                h3 {
-                    font-size: 1.2rem;
-                    font-weight: 600;
-                    padding-bottom: .5rem;
-                    border-radius: 1rem;
-                }
-    
-                .indent {
-                    text-indent: .5rem;
-                    text-align: justify;
-                }
-    
-                .soft {
-                    padding-bottom: 1.5rem;
-                    border-radius: 1rem;
-                    padding: 1rem;
-                    margin-bottom: 0.5rem;
-    
-                    ul {
-                        padding-left: 2rem;
-                    }
-                }
-    
-                .about-bg {
-                    margin-bottom: 0.5rem;
-    
-                    .about-title {
-                        font-size: 1.2rem;
-                        font-weight: 500;
-                    }
-    
-                    .about-detail {
-                        padding: 0 0 1rem 1rem;
-                    }
-    
-                }
-    
-                .contact {
-                    list-style-type: none;
-                    padding-top: 2rem;
-                    border-radius: 1rem;
-                    padding: 1rem;
-    
-                    li {
-                        padding-bottom: .5rem;
-    
-                        .contact-text {
-                            margin-left: .5rem;
-                            font-weight: 700;
-                        }
-                    }
-                }
-            }
-        }
-    
-        .hun {
-           .content {
-               .text {
-                    padding-top: 8vh;
-                    flex-direction: column!important;
-               }
-
-               .icons-hun {
-                position: absolute;
-                top: 2rem;
-                right: 3rem;
-                justify-content: end;
-                width: 100%;
-        
-                .fleg-hun {
-                    display: none!important;
-                }
-            }
-
-           }
-        }
-}
-
-// ----------------------------------------------------------------- //
-// ------------ {{{{{{{{{{{{{{{ media 1050 {{{{{{{{{{{{{{{ ------------ //
-// ----------------------------------------------------------------- //
-
-@media (min-width: 1050px) and (max-width: 1199px){
-    .cv-container {
-        .eng {
-            .right {
-                padding-left: 8%;
-            }
-
-            .icons-eng {
-                position: absolute;
-                top: 5vh;
-                left: 0;
-            }
-
-            .icons {
-                display: flex!important;
-                flex-direction: row;
-                justify-content: start;
-                width: 100%;
-
-                .fleg{
-                    display: none;
-
-                    p {
-                        display: none!important;
-                    }
-                }
-
-                .software-text {
-                    display: none;
-                }
-
-                .logo-1, 
-                .logo-2, 
-                .logo-3, 
-                .logo-4 {
-                    width: 50px;
-                    margin: 0 1rem;
-                    
-                    img{
-                        width: 100%;
-                    }
-                }
-            }
-    
-            .text {
-                display: grid;
-                grid-template-columns: 25% 75%;
-                padding-top: 5vh;
-                z-index: 10;
-    
-                h1, h2, h3 {
-                    font-family: var(--hand-ff);
-                    letter-spacing: .1rem;
-                }
-    
-                .bio {
-    
-                    h2, p {
-                        text-align: center;
-                    }
-    
-                    h2 {
-                        font-size: 3rem;
-                        font-weight: 700;
-                        
-                    }
-    
-                    p {
-                        font-size: 1.2rem;
-                        font-weight: 500;
-                    }
-                }
-    
-                .summary {
-                    padding-top: 8vh;
-                    background-color: transparent;
-    
-                    h3 {
-                        background-color: var(--secondary-color);
-                    }
-    
-                    .soft {
-                        padding-bottom: 1.5rem;
-                        background-color: var(--secondary-color);
-                        border-radius: 1rem;
-                        padding: 1rem;
-                        margin-bottom: 0.5rem;
-    
-                        ul {
-                            padding-left: 2rem;
-                        }
-                    }
-    
-                    .contact {
-                        list-style-type: none;
-                        padding-top: 2rem;
-                        background-color: var(--secondary-color);
-                        border-radius: 1rem;
-                        padding: 1rem;
-    
-                        li {
-                            padding-bottom: .5rem;
-    
-                            .contact-text {
-                                margin-left: .5rem;
-                                font-weight: 700;
-                            }
-                        }
-                    }
-                }
-            }
-       
-        }
-
-    
-        // ----------------------------------------------------------------- //
-        // ------------ {{{{{{{{{{{{{{{ HUNGARI {{{{{{{{{{{{{{{ ------------ //
-        // ----------------------------------------------------------------- //
-    
-    
-        .hun {
-            .content {    
-                .text {
-                    color: var(--main-color);
-                    display: grid;
-                    grid-template-columns: 75% 25%;
-                    padding-top: 5vh;
-                    z-index: 10;
-            
-                    h1, h2, h3 {
-                        font-family: var(--hand-ff);
-                        letter-spacing: .1rem;
-                    }
-            
-                    .bio {            
-                        h2, p {
-                            text-align: center;
-                        }
-            
-                        h2 {
-                            font-size: 3rem;
-                            font-weight: 700;
-                        }
-            
-                        p {
-                            font-size: 1.2rem;
-                            font-weight: 500;
-                        }
-                    }
-
-                    .experiance {
-                        padding-top: 2rem;
-                    }
-            
-                    .education {
-                        padding-top: 2rem;
-                    }
-            
-                    .summary {
-                        padding-top: 8vh;
-                        background-color: transparent;
-            
-                        h3 {
-                            background-color: var(--secondary-color);
-                        }
-            
-                        .soft {
-                            background-color: var(--secondary-color);
-                        }
-            
-                        .contact {
-                            background-color: var(--secondary-color);
-                        }
-                    }
-                }
-            }
-
-            #icons-hun {
-                position: absolute!important;  
-                top: 5rem;                 
-                right: 0;
-                justify-content: end;
-            
-                .fleg-hun{
-                    display: none;
-            
-                    p {
-                        display: none!important;
-                    }
-                }
-            
-                .software-text {
-                    display: none;
-                }
-            
-                .logo-1, 
-                .logo-2, 
-                .logo-3, 
-                .logo-4 {
-                    width: 50px;
-                    margin: 0 1rem;
-                    
-                    img{
-                        width: 100%;
-                    }
-                }
-            }
-    
-        }
+  &.small,
+  &.xsmall {
+    .icons {
+      display: none;
     }
-}
 
+    .eng,
+    .hun {
+      background: none;
+      overflow-y: auto;
 
-@media (max-width: 1500px) {
-    .cv-container .eng,
-    .cv-container .hun {
-        background-size: cover!important;
+      .info {
+        padding-left: 0;
+        padding-right: 0;
     }
+    }
+  }
+
+  &.xsmall {
+    .content {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .bio {
+    padding-top: 5vh;
+    text-align: center;
+  }
+
+  .info {
+    flex: 3;
+    margin: 0 5px;
+  }
+
+  .icons {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    align-content: space-around;
+    padding-top: 22px;
+    margin: 0 5px;
+
+    .switch {
+      padding: 0 2px;
+    }
+
+    button {
+      border: none;
+      background-color: transparent;
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+
+    .software-text {
+      font-size: 2.5rem;
+    }
+
+    .logo-1,
+    .logo-2,
+    .logo-3,
+    .logo-4 {
+      width: 30px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .summary {
+    padding-top: 4vh;
+    flex: 1;
+    margin: 0 5px;
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding-bottom: 0.5rem;
+      border-radius: 1rem;
+    }
+
+    .indent {
+      text-indent: 0.5rem;
+      text-align: justify;
+    }
+
+    .soft {
+      background-color: var(--secondary-color);
+      padding-bottom: 1.5rem;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      ul {
+        padding-left: 2rem;
+      }
+    }
+
+    .contact {
+      background-color: var(--secondary-color);
+      list-style-type: none;
+      padding-top: 2rem;
+      border-radius: 1rem;
+      padding: 1rem;
+
+      li {
+        padding-bottom: 0.5rem;
+
+        .contact-text {
+          margin-left: 0.5rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .section-select {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 2rem 0;
+
+    #experience-btn,
+    #education-btn {
+      border: none;
+      padding: 0.7rem 1.5rem;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 500;
+      background-color: var(--main-color);
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+        background-color: rgba(var(--main-color-rgb), 0.8);
+      }
+    }
+
+    .active {
+      background-color: var(--secondary-color) !important;
+
+      &:hover {
+        background-color: var(--secondary-color);
+      }
+    }
+
+    #experience-btn {
+      border-radius: 10px 0 0 10px;
+    }
+
+    #education-btn {
+      border-radius: 0 10px 10px 0;
+    }
+  }
+
+  .work-grid {
+    display: grid;
+    padding-bottom: 1.2rem;
+    grid-template-columns: 50% 50%;
+
+    .title {
+      text-align: right;
+      padding-right: 3rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding-bottom: 0.5rem;
+    }
+
+    .time {
+      padding-left: 1rem;
+      text-align: right;
+      padding-right: 3rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      padding-bottom: 2rem;
+      padding-left: 25%;
+    }
+
+    h3 {
+      padding-bottom: 0.5rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .eng {
+    background-image: url(../../../assets/cv/cv-bg-eng.png);
+    background-position: bottom right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+    min-width: 100vw;
+
+    .info {
+        padding-right: 25%;
+    }
+  }
+  
+  .hun {
+    background-image: url(../../../assets/cv/cv-bg-hun.png);
+    background-position: bottom left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+
+
+    .info {
+        padding-left: 25%;
+    }
+  }
+  
 }

@@ -14,15 +14,6 @@ const images = {
   selector: 'app-weather',
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss'],
-  animations: [
-    trigger('fadeIn', [
-      state('in', style({ 'opacity': '1' })),
-      state('out', style({ 'opacity': '0' })),
-      transition('* => *', [
-        animate(2000)
-      ])
-    ])
-  ]
 })
 export class WeatherComponent implements OnInit {
   imageURLs = images;

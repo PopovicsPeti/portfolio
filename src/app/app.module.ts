@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,8 +17,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { DownloadDirective } from './download/download.directive';
 import { DownloadComponent } from './components/download/download.component';
 import { MobileNavbarComponent } from './components/mobile-navbar/mobile-navbar.component';
-import { CvDesktopComponent } from './components/cv-desktop/cv-desktop.component';
-//import { RecaptchaModule } from 'ng-recaptcha';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -34,13 +34,13 @@ import { CvDesktopComponent } from './components/cv-desktop/cv-desktop.component
     SideBarComponent,
     DownloadDirective,
     DownloadComponent,
-    MobileNavbarComponent,
-    CvDesktopComponent
+    MobileNavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //RecaptchaModule
+    LayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
