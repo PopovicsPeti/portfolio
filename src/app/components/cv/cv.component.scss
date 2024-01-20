@@ -24,13 +24,21 @@
       .info {
         padding-left: 0;
         padding-right: 0;
-    }
+      }
     }
   }
 
   &.xsmall {
-    .content {
-      flex-direction: column-reverse;
+    .eng {
+      .content {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .hun {
+      .content {
+        flex-direction: column;
+      }
     }
   }
 
@@ -41,7 +49,7 @@
 
   .info {
     flex: 3;
-    margin: 0 5px;
+    margin: 0 0.5rem;
   }
 
   .icons {
@@ -50,11 +58,11 @@
     flex-direction: column;
     justify-content: start;
     align-content: space-around;
-    padding-top: 22px;
-    margin: 0 5px;
+    padding-top: 2.2rem;
+    margin: 0 0.5rem;
 
     .switch {
-      padding: 0 2px;
+      padding: 0 0.2rem;
     }
 
     button {
@@ -75,7 +83,7 @@
     .logo-2,
     .logo-3,
     .logo-4 {
-      width: 30px;
+      width: 3rem;
 
       img {
         width: 100%;
@@ -86,7 +94,7 @@
   .summary {
     padding-top: 4vh;
     flex: 1;
-    margin: 0 5px;
+    margin: 0 0.5rem;
 
     h3 {
       font-size: 1.2rem;
@@ -219,10 +227,10 @@
     min-width: 100vw;
 
     .info {
-        padding-right: 25%;
+      padding-right: 25%;
     }
   }
-  
+
   .hun {
     background-image: url(../../../assets/cv/cv-bg-hun.png);
     background-position: bottom left;
@@ -232,10 +240,8 @@
     max-height: 100vh;
     min-width: 100vw;
 
-
     .info {
-        padding-left: 25%;
+      padding-left: 25%;
     }
   }
-  
 }
