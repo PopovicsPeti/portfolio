@@ -1,7 +1,7 @@
 <div class="cv-container">
     <section class="eng" *ngIf="!isHungarianCv">
         <div class="content">
-            <div class="icons">
+            <div class="icons icons-eng">
                 <div class="fleg">
                     <p>
                         switch <br>
@@ -239,10 +239,10 @@
                     </article>
 
                     <div class="section-select">
-                        <button id="experience-btn" class="active" (click)="showExperienceHun()">
+                        <button id="experience-btn-hun" class="active" (click)="showExperienceHun()">
                             Tapasztalat
                         </button>
-                        <button id="education-btn" class="" (click)="showEducationHun()">
+                        <button id="education-btn-hun" class="" (click)="showEducationHun()">
                             Tanulmányok
                         </button>
                     </div>
@@ -277,7 +277,7 @@
                         <div class="work-grid">
                             <div>
                                 <p class="title">
-                                    MagyarHonvédség
+                                    Magyar Honvédség
                                 </p>
                                 <p class="time">
                                     2012. júllius - 2018. december <br> Tata
@@ -416,7 +416,7 @@
                     </ul>
                 </article>
             </div>
-            <div class="icons icons-hun">
+            <div class="icons icons-hun" id="icons-hun">
                 <div class="fleg-hun">
                     <button (click)=" switchToHun != switchToHun; toggleLanguage()" 
                             title="Switch to English.">
@@ -441,3 +441,4 @@
             </div>
         </div>
     </section>
+</div>

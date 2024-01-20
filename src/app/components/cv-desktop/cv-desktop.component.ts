@@ -22,10 +22,8 @@ export class CvDesktopComponent implements OnInit {
     this.LS.toggleLanguage();
   }
 
-
   toggleLanguage() {  // over 1200px
     this.LS.toggleLanguage();
-    console.log(this.switchToHun)
     let engCV = document.getElementById('eng');
     let hunCV = document.getElementById('hun');
 
@@ -89,6 +87,4 @@ export class CvDesktopComponent implements OnInit {
     educationBtn?.classList.add('active');
     educationHtml?.classList.remove('hide');
   }
-
-
 }

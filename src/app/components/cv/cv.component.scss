@@ -9,183 +9,231 @@
     display: none;
 }
 
-.cv-container {
-    .text {
-        color: var(--main-color);
-    }
-
-    .section-select {
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-
-        #experience-btn,
-        #education-btn {
-            border: none;
-            padding: .7rem 1.5rem;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 500;
-            background-color: var(--main-color);
-            transition: .5s ease-in-out;
-            
-            &:hover {
-                background-color: rgba(var(--main-color-rgb), .8);
-            }
-        }
-        
-        .active {
-            background-color: var(--secondary-color)!important;
-
-            &:hover {
-                background-color: var(--secondary-color);
-            }
-        }
-        
-        #experience-btn {
-            border-radius: 10px 0 0 10px;
-        }
-
-        #education-btn {
-            border-radius: 0 10px 10px 0;
-        }
-    }
-
-    .eng,
-    .hun {
-        .content {
-            display: flex;
-            padding: 2rem;
-
-            .icons {
-                display: none;
-            }
-        }
-
+.cv-container {   
         .text {
-            display: flex;
-            flex-direction: column-reverse;
-
-            .bio {
-                text-align: center;
-
-                h2 {
-                    font-size: 2rem;
-                    font-weight: 600;
-                }
-            }
+            color: var(--main-color);
         }
-
-        .work-grid {
-            margin-left: 7%;
-            display: grid;
-            grid-template-columns: 30% 70%;
-            padding-bottom: 1.2rem;
     
-            .title {
-                text-align: right;
-                padding-right: 3rem;
+        .section-select {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+    
+            #experience-btn,
+            #education-btn,
+            #experience-btn-hun,
+            #education-btn-hun {
+                border: none;
+                padding: .7rem 1.5rem;
+                color: white;
                 font-size: 1.2rem;
                 font-weight: 500;
-                padding-bottom: .5rem;
+                background-color: var(--main-color);
+                transition: .5s ease-in-out;
+                
+                &:hover {
+                    background-color: rgba(var(--main-color-rgb), .8);
+                }
+            }
+            
+            .active {
+                background-color: var(--secondary-color)!important;
+    
+                &:hover {
+                    background-color: var(--secondary-color);
+                }
+            }
+            
+            #experience-btn, 
+            #experience-btn-hun {
+                border-radius: 10px 0 0 10px;
             }
     
-            .time {
-                padding-left: 1rem;
-                text-align: right;
-                padding-right: 3rem;
+            #education-btn,
+            #education-btn-hun {
+                border-radius: 0 10px 10px 0;
             }
-
-            h2 {
-                font-size: 1.6rem;
-                font-weight: 600;
-                padding-bottom: 2rem;
-                padding-left: 25%;
-            }
-
-            h3 {
-                padding-bottom: .5rem;
-                font-size: 1.4rem;
-                font-weight: 700;
-            }
-
-            ul {
-                padding-left: 1.2rem;
-            }            
         }
-
-        .experiance {
-            padding-top: 2rem;
-        }
-
-        .education {
-            padding-top: 2rem; 
-        }
-
-        .summary {
-            background-color: var(--secondary-color);
-            border-radius: 1rem;
-
-            h3 {
-                font-size: 1.2rem;
-                font-weight: 600;
-                padding-bottom: .5rem;
-                border-radius: 1rem;
-            }
-
-            .indent {
-                text-indent: .5rem;
-                text-align: justify;
-            }
-
-            .soft {
-                padding-bottom: 1.5rem;
-                border-radius: 1rem;
-                padding: 1rem;
-                margin-bottom: 0.5rem;
-
-                ul {
-                    padding-left: 2rem;
+    
+        .eng,
+        .hun {
+            .content {
+                display: block;
+                padding: 2rem;
+    
+                .icons {
+                    display: flex!important;
+                    flex-direction: row;
+                    justify-content: start;
+                    margin-bottom: 1rem;
+                    width: 100%;
+            
+                    .fleg{
+                        display: none;
+            
+                        p {
+                            display: none!important;
+                        }
+                    }
+            
+                    .software-text {
+                        display: none;
+                    }
+            
+                    .logo-1, 
+                    .logo-2, 
+                    .logo-3, 
+                    .logo-4 {
+                        width: 50px;
+                        margin: 0 1rem;
+                        
+                        img{
+                            width: 100%;
+                        }
+                    }
                 }
             }
-
-            .about-bg {
-                margin-bottom: 0.5rem;
-
-                .about-title {
+    
+            .text {
+                display: flex;
+                flex-direction: column-reverse;
+    
+                .bio {
+                    text-align: center;
+    
+                    h2 {
+                        font-size: 2rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+    
+            .work-grid {
+                margin-left: 7%;
+                display: grid;
+                grid-template-columns: 30% 70%;
+                padding-bottom: 1.2rem;
+        
+                .title {
+                    text-align: right;
+                    padding-right: 3rem;
                     font-size: 1.2rem;
                     font-weight: 500;
-                }
-
-                .about-detail {
-                    padding: 0 0 1rem 1rem;
-                }
-
-            }
-
-            .contact {
-                list-style-type: none;
-                padding-top: 2rem;
-                border-radius: 1rem;
-                padding: 1rem;
-
-                li {
                     padding-bottom: .5rem;
-
-                    .contact-text {
-                        margin-left: .5rem;
-                        font-weight: 700;
+                }
+        
+                .time {
+                    padding-left: 1rem;
+                    text-align: right;
+                    padding-right: 3rem;
+                }
+    
+                h2 {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    padding-bottom: 2rem;
+                    padding-left: 25%;
+                }
+    
+                h3 {
+                    padding-bottom: .5rem;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                }
+    
+                ul {
+                    padding-left: 1.2rem;
+                }            
+            }
+    
+            .experiance {
+                padding-top: 2rem;
+            }
+    
+            .education {
+                padding-top: 2rem; 
+            }
+    
+            .summary {
+                background-color: var(--secondary-color);
+                border-radius: 1rem;
+    
+                h3 {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    padding-bottom: .5rem;
+                    border-radius: 1rem;
+                }
+    
+                .indent {
+                    text-indent: .5rem;
+                    text-align: justify;
+                }
+    
+                .soft {
+                    padding-bottom: 1.5rem;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    margin-bottom: 0.5rem;
+    
+                    ul {
+                        padding-left: 2rem;
+                    }
+                }
+    
+                .about-bg {
+                    margin-bottom: 0.5rem;
+    
+                    .about-title {
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                    }
+    
+                    .about-detail {
+                        padding: 0 0 1rem 1rem;
+                    }
+    
+                }
+    
+                .contact {
+                    list-style-type: none;
+                    padding-top: 2rem;
+                    border-radius: 1rem;
+                    padding: 1rem;
+    
+                    li {
+                        padding-bottom: .5rem;
+    
+                        .contact-text {
+                            margin-left: .5rem;
+                            font-weight: 700;
+                        }
                     }
                 }
             }
         }
-    }
+    
+        .hun {
+           .content {
+               .text {
+                    padding-top: 8vh;
+                    flex-direction: column!important;
+               }
 
-    .hun {
-        .text {
-            flex-direction: column!important;
+               .icons-hun {
+                position: absolute;
+                top: 2rem;
+                right: 3rem;
+                justify-content: end;
+                width: 100%;
+        
+                .fleg-hun {
+                    display: none!important;
+                }
+            }
+
+           }
         }
-    }
 }
 
 // ----------------------------------------------------------------- //
@@ -199,10 +247,13 @@
                 padding-left: 8%;
             }
 
-            .icons {
+            .icons-eng {
                 position: absolute;
                 top: 5vh;
                 left: 0;
+            }
+
+            .icons {
                 display: flex!important;
                 flex-direction: row;
                 justify-content: start;
@@ -310,10 +361,7 @@
     
     
         .hun {
-            .content {
-                display: grid;
-                grid-template-columns: 90% 10%;
-    
+            .content {    
                 .text {
                     color: var(--main-color);
                     display: grid;
@@ -326,10 +374,7 @@
                         letter-spacing: .1rem;
                     }
             
-                    .bio {
-                        display: grid;
-                        grid-template-columns: 40% 60%;
-            
+                    .bio {            
                         h2, p {
                             text-align: center;
                         }
@@ -371,11 +416,41 @@
                     }
                 }
             }
+
+            #icons-hun {
+                position: absolute!important;  
+                top: 5rem;                 
+                right: 0;
+                justify-content: end;
+            
+                .fleg-hun{
+                    display: none;
+            
+                    p {
+                        display: none!important;
+                    }
+                }
+            
+                .software-text {
+                    display: none;
+                }
+            
+                .logo-1, 
+                .logo-2, 
+                .logo-3, 
+                .logo-4 {
+                    width: 50px;
+                    margin: 0 1rem;
+                    
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
     
         }
     }
 }
-
 
 
 @media (max-width: 1500px) {

@@ -30,13 +30,17 @@ export class CvComponent implements OnInit {
 
   showExperience(){
     let experienceBtn = document.getElementById('experience-btn');
+    let experienceBtnHun = document.getElementById('experience-btn-hun');
     let experienceHtml = document.getElementById('experiance');
     let educationBtn = document.getElementById('education-btn');
+    let educationBtnHun = document.getElementById('education-btn-hun');
     let educationHtml = document.getElementById('education');
 
     experienceHtml?.classList.remove('hide');
     experienceBtn?.classList.add('active');
+    experienceBtnHun?.classList.add('active');
     educationBtn?.classList.remove('active');
+    educationBtnHun?.classList.remove('active');
     educationHtml?.classList.add('hide');
   }
 
@@ -77,3 +81,4 @@ export class CvComponent implements OnInit {
   }
 
 }
+
