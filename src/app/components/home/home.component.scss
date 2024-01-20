@@ -4,10 +4,10 @@
     display: none!important;
 }
 
-.container {
+.container-home {
     position: relative;
-    background-image: url(../../../assets/home/main-bg.png);
-    background-position: center;
+    background-image: url(../../../assets/home/main-bg-merge.png);
+    background-position: left;
     background-size: cover;
     min-height: 100vh;
     min-width: 100vw;
@@ -15,24 +15,74 @@
     overflow-y: hidden;
 
     .opening {
-        position: absolute;
-        top: 35vh;
-        right: 20vw;
-        text-align: right;
-        color: white;
+        display: flex;
+        flex-direction: row;
 
-        p {
-            font-family: var(--hand-ff);
-            font-size: 3rem;
+        .text {
+            position: absolute;
+            top: 35vh;
+            text-align: right;
+            color: white;
+
+            p {
+                font-family: var(--hand-ff);
+                font-size: 3rem;
+            }
+
+            .portfolio{
+                display: flex;
+                flex-direction: row;
+
+                h1 {
+                    font-size: 10rem;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    margin-top: - 3rem;
+                }
+            }
         }
 
-        h1 {
-            font-size: 10rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-top: - 3rem;
+        @media (min-width: 1500px) {
+            .text {
+                right: 20vw!important;
+            }
         }
 
+        @media (min-width: 1200px) {
+            .text {
+                right: 5vw;
+
+                .portfolio{
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .text {
+                top: 15vh;
+                right: 8vw;
+
+                .portfolio{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            .text {
+                top: 7vh;
+                right: 4vw;
+
+                .portfolio{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        
         .btn-start {
 
             button {
@@ -57,22 +107,28 @@
                 }
             }
         }
-    }
 
-    .pic {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        max-width: 40vw;
-        margin-bottom: -20%;
-        margin-left: -5%;
-
-        img {
-            width: 100%;
-        }
+        // .pic {
+        //     display: block;
+        //     width: 40vw;     
+        //     max-height: 100vh;     
+        //     min-height: 70vh;  
+        //     margin-top: 30vh;
+        //     margin-left: -10vw;
+            
+        //     //background-color: black;
+        //     background-image: url(../../../assets/home/landing-img.png);
+        //     background-position: center;
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+    
+        //     img {
+        //         width: 100%;
+        //     }
+        // }
+        
     }
 }
-
 
 @media (max-width: 1199px) {
     .small{
