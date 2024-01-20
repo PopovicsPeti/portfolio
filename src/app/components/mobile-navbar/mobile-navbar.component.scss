@@ -1,141 +1,136 @@
 .mobile-nav-container {
-    display: none;
+  display: flex;
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 200;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    border: 0;
+    background-image: url(../../../assets/menu/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.5rem;
+    aspect-ratio: 1;
+  }
+
+  .mobile-nav-toggle-open {
+    background-image: url(../../../assets/menu/icon-close.svg);
+  }
+
+  .navigation {
+    position: fixed;
+    z-index: 100;
+    inset: 0 0 0 30%;
+    padding: 4rem 0;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-height: 100vh;
+    backdrop-filter: blur(1.5rem);
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    .language-eng,
+    .language-hun {
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+      padding: 1rem 2.5rem !important;
+    }
+
+    .language-eng {
+      background-image: url(../../../assets/menu/eng-button.png);
+    }
+
+    .language-hun {
+      background-image: url(../../../assets/menu/hun-button.png);
+    }
+
+    .list {
+      list-style-type: none;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+
+      a,
+      p {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        cursor: pointer;
+      }
+
+      a {
+        padding: 2.5rem;
+      }
+
+      p > span {
+        font-size: 0.5rem;
+        padding: 0;
+        margin: 0;
+        margin-bottom: -0.5rem;
+      }
+    }
+
+    .massage {
+      background-image: url(../../../assets/menu/mobile-nav-massage.png);
+    }
+
+    .space {
+      background-image: url(../../../assets/menu/mobile-nav-space.png);
+    }
+
+    .weather {
+      background-image: url(../../../assets/menu/mobile-nav-weather.png);
+    }
+
+    .cv {
+      background-image: url(../../../assets/menu/mobile-nav-cv.png);
+    }
+
+    .motivation {
+      background-image: url(../../../assets/menu/mobile-nav-motivation.png);
+    }
+
+    .massage,
+    .cv,
+    .motivation,
+    .space,
+    .weather {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right center;
+      transition: 0.5s ease-in-out;
+      opacity: 0.2;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    .active {
+      opacity: 1;
+    }
+  }
 }
 
-@media (max-width: 1199px) {
-    .mobile-nav-container {
-        display: flex;
-
-        .mobile-nav-toggle {
-            display: block;
-            position: absolute;
-            z-index: 200;
-            right: 1rem;
-            top: 2rem;
-            background: transparent;
-            border: 0;
-            background-image: url(../../../assets/menu/icon-hamburger.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 1.5rem;
-            aspect-ratio: 1;
-        }
-
-        .mobile-nav-toggle-open {
-            background-image: url(../../../assets/menu/icon-close.svg);
-        }
-
-        .navigation {
-            position: fixed;
-            z-index: 100;
-            inset: 0 0 0 30%;
-            padding: 4rem 0;
-            flex-direction: column;
-            transform: translateX(100%);
-            transition: .5s ease-in-out;
-            background-color: rgba(0, 0, 0, .9);
-            min-height: 100vh;
-            backdrop-filter: blur(1.5rem);
-
-            &.open {
-                transform: translateX(0);
-            }
-
-            .language-eng,
-            .language-hun {
-                background-repeat: no-repeat;
-                background-position: right;
-                background-size: contain;
-                padding: 1rem 2.5rem!important;
-            }
-
-            .language-eng {
-                background-image: url(../../../assets/menu/eng-button.png);
-            }
-
-            .language-hun {
-                background-image: url(../../../assets/menu/hun-button.png);
-            }
-
-            .list {
-                list-style-type: none;
-                border-top: 2px solid white;
-                border-bottom: 2px solid white;
-
-                a, p {
-                    display: block;
-                    color: white;
-                    text-decoration: none;
-                    font-size: 2rem;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: .2rem;
-                    cursor: pointer;
-                }
-
-                a {
-                    padding: 2.5rem;
-                }
-
-                p > span {
-                    font-size: .5rem;
-                    padding: 0;
-                    margin: 0;
-                    margin-bottom: -.5rem;
-                }
-            }
-
-            .massage {
-                background-image: url(../../../assets/menu/mobile-nav-massage.png);
-            }
-
-            .space {
-                background-image: url(../../../assets/menu/mobile-nav-space.png);
-            }
-
-            .weather {
-                background-image: url(../../../assets/menu/mobile-nav-weather.png);
-            }
-
-            .cv {
-                background-image: url(../../../assets/menu/mobile-nav-cv.png);
-            }
-
-            .motivation {
-                background-image: url(../../../assets/menu/mobile-nav-motivation.png);
-            }
-
-            .massage,
-            .cv,
-            .motivation,
-            .space,
-            .weather {
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: right center;
-                transition: .5s ease-in-out;
-                opacity: .2;
-
-                &:hover {
-                    opacity: .9;
-                }
-            }
-
-            .active {
-                opacity: 1;
-            }
-        }
-    }
-
-    .mobile-nav-container::after {
-        content: '';
-        display: block;
-        position: relative;
-        height: 1px;
-        width: 100%;
-        margin-right: -4rem;
-        background: rgba(256, 256, 256, .95);
-        order: 1;
-        z-index: 200;
-    }
+.mobile-nav-container::after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin-right: -4rem;
+  background: rgba(256, 256, 256, 0.95);
+  order: 1;
+  z-index: 200;
 }

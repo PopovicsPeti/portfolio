@@ -4,7 +4,6 @@
       class="navbar"
       *ngSwitchCase="
         breakpoint === 'large' ||
-        breakpoint === 'medium' ||
         breakpoint === 'xlarge'
       "
     >
@@ -12,7 +11,7 @@
     </div>
 
     <app-mobile-navbar
-      *ngSwitchCase="breakpoint === 'xsmall' || breakpoint === 'small'"
+      *ngSwitchCase="breakpoint === 'xsmall' || breakpoint === 'small' || breakpoint === 'medium'"
     ></app-mobile-navbar>
   </ng-container>
 </ng-container>

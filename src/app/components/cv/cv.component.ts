@@ -93,9 +93,6 @@ export class CvComponent implements OnInit {
     this.languageService.isHungarianLanguage$.subscribe((value) => {
       this.isHungarianCv$.next(value);
     });
-    let educationBtnHun = document.getElementById('education-btn-hun');
-    experienceBtnHun?.classList.add('active');
-    educationBtnHun?.classList.remove('active');
   }
 
   public showEducation() {
